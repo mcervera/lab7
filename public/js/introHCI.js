@@ -47,6 +47,7 @@ function initializePage() {
 			details_div.html(new_html);
 
 			details_div.find('.project-delete').click(function(e) {
+				console.log(idNumber);
 				$.post('/project/'+idNumber+'/delete', function() {
 					window.location.href = '/';
 				});
@@ -69,6 +70,7 @@ function initializePage() {
 			'date':  date,
 			'summary': summary
 		};
+		console.log(json);
 		$.post('/project/new', json, function() {
 			window.location.href = '/'; // reload the page
 		});
